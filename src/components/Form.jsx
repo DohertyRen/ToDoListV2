@@ -8,9 +8,12 @@ export default function Form({ addTodo }) {
   const [id, setId] = useState(0);
 
   const todoCreate = (text) => {
+    if (text != null){
     const todoObj = { text: text, id: id };
     setId(id + 1);
     addTodo(todoObj);
+    setText(null)
+  }
   };
 
   return (
