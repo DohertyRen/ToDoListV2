@@ -14,7 +14,10 @@ export default function Form({ addTodo }) {
     addTodo(todoObj);
     setText(null)
   }
+
   };
+
+  
 
   return (
     <Paper style={{ padding: "1em" }}>
@@ -26,6 +29,7 @@ export default function Form({ addTodo }) {
             variant="outlined"
             fullWidth
             onChange={(e) => setText(e.target.value)}
+            onKeyPress={e => e.key === 'Enter' && e.preventDefault()}
           />
           <Button
             type="reset"
